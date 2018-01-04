@@ -14,7 +14,7 @@ public class ListTest {
 	@Test
 	public void test() {
 		List<Integer> list = Arrays.asList(99,100);
-		assertThat(list, hasSize(4));
+		assertThat(list, hasSize(2));
 	}
 
 }
