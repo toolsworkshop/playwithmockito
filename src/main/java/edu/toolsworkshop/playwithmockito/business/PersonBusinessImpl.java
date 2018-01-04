@@ -5,12 +5,9 @@ import edu.toolsworkshop.playwithmockito.data.Person.Gender;
 import edu.toolsworkshop.playwithmockito.data.PersonService;
 
 public class PersonBusinessImpl {
-	private PersonService personService;
+	private PersonService personService = new PersonServiceImpl();
 
-	public PersonBusinessImpl(PersonService personService) {
-		super();
-		this.personService = personService;
-	}
+	
 	
 	/**
 	 * Get a random person and return the full name with prefix (Mr. or Ms. based on gender).
@@ -22,7 +19,7 @@ public class PersonBusinessImpl {
 			throw new IllegalStateException("How is it that no one is found?");
 		}
 		
-		if (luckyPerson.getGender().equals(Gender.Male)) {
+		if (Gender.Male.equals(luckyPerson.getGender())) {
 			return String.format("Mr. %s %s", luckyPerson.getFirstname(), luckyPerson.getLastname());
 		} else {
 			return String.format("Ms. %s %s", luckyPerson.getFirstname(), luckyPerson.getLastname());
@@ -44,5 +41,20 @@ public class PersonBusinessImpl {
 		} else {
 			return false;
 		}
+	}
+	class PersonServiceImpl implements PersonService{
+
+		@Override
+		public Person find(String id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public Person getRandomPerson() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
 	}
 }

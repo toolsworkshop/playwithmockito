@@ -23,6 +23,8 @@ public class PersonBusinessImplTestWithMockitoAnnotations {
 	@Mock
 	PersonService personService;
 	
+	///I assume that this should not work as PersonService is a hard dependency in class PersonBusinessImpl
+	//But unexpectedly it works :)
 	@InjectMocks
 	PersonBusinessImpl personBusinessImpl;
 
