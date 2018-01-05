@@ -22,7 +22,7 @@ public class PersonBusinessImpl {
 			throw new IllegalStateException("How is it that no one is found?");
 		}
 		
-		if (luckyPerson.getGender().equals(Gender.Male)) {
+		if (Gender.Male.equals(luckyPerson.getGender())) {
 			return String.format("Mr. %s %s", luckyPerson.getFirstname(), luckyPerson.getLastname());
 		} else {
 			return String.format("Ms. %s %s", luckyPerson.getFirstname(), luckyPerson.getLastname());
