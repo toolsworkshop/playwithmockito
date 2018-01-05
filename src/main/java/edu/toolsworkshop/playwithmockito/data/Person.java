@@ -10,6 +10,7 @@ public class Person {
 	private String firstname;
 	private String lastname;
 	private Gender gender;
+	private int blah;
 	private int age;
 
 	public Person(String firstname, String lastname, Gender gender, int age) {

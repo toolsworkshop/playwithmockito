@@ -1,5 +1,7 @@
 package edu.toolsworkshop.playwithmockito.business;
 
+import com.google.inject.Inject;
+
 import edu.toolsworkshop.playwithmockito.data.Person;
 import edu.toolsworkshop.playwithmockito.data.Person.Gender;
 import edu.toolsworkshop.playwithmockito.data.PersonService;
@@ -7,6 +9,7 @@ import edu.toolsworkshop.playwithmockito.data.PersonService;
 public class PersonBusinessImpl {
 	private PersonService personService;
 
+	@Inject
 	public PersonBusinessImpl(PersonService personService) {
 		super();
 		this.personService = personService;

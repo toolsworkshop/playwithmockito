@@ -18,10 +18,15 @@ public class PersonBusinessImplTestWithMockito {
 	@Test
 	public void testGetFullNameOfLuckyPerson_female() {
 		PersonService personService = mock(PersonService.class);
+		
 		Person femalePerson = new Person("maneesha", "jain", Gender.Female, 52);
+		
 		stub(personService.getRandomPerson()).toReturn(femalePerson);
+		
 		PersonBusinessImpl personBusinessImpl = new PersonBusinessImpl(personService);
+		
 		String fullName = personBusinessImpl.getFullNameOfLuckyPerson();
+		
 		assertTrue("Expecting Ms", fullName.startsWith("Ms"));
 	}
 	
@@ -30,6 +35,7 @@ public class PersonBusinessImplTestWithMockito {
 		PersonService personService = mock(PersonService.class);
 		Person malePerson = new Person("Imbrahim", "Tamimi", Gender.Male, 52);
 		when(personService.getRandomPerson()).thenReturn(malePerson);
+		
 		PersonBusinessImpl personBusinessImpl = new PersonBusinessImpl(personService);
 		String fullName = personBusinessImpl.getFullNameOfLuckyPerson();
 		assertTrue("Expecting Mr", fullName.startsWith("Mr"));
@@ -45,9 +51,13 @@ public class PersonBusinessImplTestWithMockito {
 	@Test
 	public void testIsSeniorTrue() {
 		PersonService personService = mock(PersonService.class);
+		
 		PersonBusinessImpl personBusinessImpl = new PersonBusinessImpl(personService);
+		
 		Person malePerson = new Person("Imbrahim", "Tamimi", Gender.Male, 70);
+		
 		when(personService.find(anyString())).thenReturn(malePerson);
+		
 		assertTrue(personBusinessImpl.isSenior("1"));
 	}
 
