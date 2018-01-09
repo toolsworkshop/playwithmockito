@@ -11,6 +11,7 @@ public class Person {
 	private String lastname;
 	private Gender gender;
 	private int age;
+	private String nickName;
 
 	public Person(String firstname, String lastname, Gender gender, int age) {
 		super();
